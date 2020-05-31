@@ -1,0 +1,11 @@
+sudo:require
+services:
+    - docker
+
+before_install:
+    - docker build -t chandan/docker-react -f DockerFile.dev .
+
+script:
+    - docker run -e CI=true chandan/docker-react npm run test -- --coverage
+
+language: generic
