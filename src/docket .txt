@@ -1,0 +1,95 @@
+Windows Home with Docker Toolbox
+
+1. Pass the container the environment variable with fix directly in the docker run command (recommended):
+Windows Home with Docker Toolbox
+
+1. Pass the container the environment variable with fix directly in the docker run command (recommended):
+
+-e CHOKIDAR_USEPOLLING=true
+
+or
+
+2. Create a .env file in the project root with the following inside of it:
+
+CHOKIDAR_USESPOLLING=true
+
+Working example commands for each terminal (be sure to run these commands in the root of your project directory)
+
+Docker Quickstart (recommended)
+
+docker run -it -p 3000:3000 -v /app/node_modules -v ${PWD}:/app -e CHOKIDAR_USEPOLLING=true CONTAINER_ID
+
+GitBash
+
+winpty docker run -it -p 3000:3000 -v /app/node_modules -v "/$(PWD)":/app -e CHOKIDAR_USEPOLLING=true CONTAINER_ID
+
+PowerShell
+
+docker run -it -p 3000:3000 -v /app/node_modules -v /c/Users/username/frontend:/app -e CHOKIDAR_USEPOLLING=true CONTAINER_ID
+
+Note: Currently, using the full path to your project directory is the only thing that seems to properly mount the volume. Please remember to replace your current working directory with what is shown in the command above.
+
+VirtualBox Folder Sharing
+
+By default, VirtualBox will share the C:\Users directory. If you are using an external or network drive or some other drive on your machine such as D:\ or F:\ it will not be shared and your volumes not be mounted properly.Windows Home with Docker Toolbox
+
+1. Pass the container the environment variable with fix directly in the docker run command (recommended):
+
+-e CHOKIDAR_USEPOLLING=true
+
+or
+
+2. Create a .env file in the project root with the following inside of it:
+
+CHOKIDAR_USESPOLLING=true
+
+Working example commands for each terminal (be sure to run these commands in the root of your project directory)
+
+Docker Quickstart (recommended)
+
+docker run -it -p 3000:3000 -v /app/node_modules -v ${PWD}:/app -e CHOKIDAR_USEPOLLING=true CONTAINER_ID
+
+GitBash
+
+winpty docker run -it -p 3000:3000 -v /app/node_modules -v "/$(PWD)":/app -e CHOKIDAR_USEPOLLING=true CONTAINER_ID
+
+PowerShell
+
+docker run -it -p 3000:3000 -v /app/node_modules -v /c/Users/username/frontend:/app -e CHOKIDAR_USEPOLLING=true CONTAINER_ID
+
+Note: Currently, using the full path to your project directory is the only thing that seems to properly mount the volume. Please remember to replace your current working directory with what is shown in the command above.
+
+VirtualBox Folder Sharing
+
+By default, VirtualBox will share the C:\Users directory. If you are using an external or network drive or some other drive on your machine such as D:\ or F:\ it will not be shared and your volumes not be mounted properly.
+-e CHOKIDAR_USEPOLLING=true
+
+or
+
+2. Create a .env file in the project root with the following inside of it:
+
+CHOKIDAR_USESPOLLING=true
+
+Working example commands for each terminal (be sure to run these commands in the root of your project directory)
+
+Docker Quickstart (recommended)
+
+docker run -it -p 3000:3000 -v /app/node_modules -v ${PWD}:/app -e CHOKIDAR_USEPOLLING=true c8c724239377
+
+GitBash
+
+winpty docker run -it -p 3000:3000 -v /app/node_modules -v "$(PWD)":/app -e CHOKIDAR_USEPOLLING=true ff1f22a6e120
+
+winpty docker run  -it  --rm  -v ${PWD}:/app  -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true a719ae5f6069
+PowerShell
+
+docker run -it -p 3000:3000 -v /app/node_modules -v /c/Users/username/frontend:/app -e CHOKIDAR_USEPOLLING=true CONTAINER_ID
+
+Note: Currently, using the full path to your project directory is the only thing that seems to properly mount the volume. Please remember to replace your current working directory with what is shown in the command above.
+
+VirtualBox Folder Sharing
+
+By default, VirtualBox will share the C:\Users directory. If you are using an external or network drive or some other drive on your machine such as D:\ or F:\ it will not be shared and your volumes not be mounted properly.
+
+      web:
+        stdin_open: true
